@@ -106,3 +106,16 @@ Descrição dos tipos de dados e semântica utilizadas na comunicação entre os
   }
 ```
 
+### Estrutura do Projeto
+
+O projeto pin-goias está dividido em dois módulos: pin-dominio e pin-api.
+
+#### pin-dominio
+Contém as classes de serviços para acesso aos dados de domínio da aplicação.
+Neste exemplo, os dados retornados estão armazenados em mapas no próprio código, simulando um acesso à base de dados.
+
+#### pin-api
+Contém as classes de definição dos serviços REST e sua documentação utilizando o Swagger 2.0.
+Este módulo contém uma interface fornecida pelo framework Swagger para acesso à documentação dos serviços REST disponibilizados, além de fornecer uma API para testes dos serviços.
+
+
