@@ -106,7 +106,7 @@ Descrição dos tipos de dados e semântica utilizadas na comunicação entre os
   }
 ```
 
-### Estrutura do Projeto
+### Estrutura do Projeto: pin-goias
 
 O projeto pin-goias está dividido em dois módulos: pin-dominio e pin-api.
 
