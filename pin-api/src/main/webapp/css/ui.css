@@ -1,0 +1,14 @@
+.logo-estado-e-segplan {
+	background: url("../images/logo-segplan-governo.png") no-repeat scroll 0 18px #1B4EB4;
+	width: 270px;
+	height: 65px;
+	margin-top: -29px;
+}
+
+body #header{
+	background-color: #1B4EB4;
+}
+
+body #header a#logo {
+	background-image: none;
+}	
