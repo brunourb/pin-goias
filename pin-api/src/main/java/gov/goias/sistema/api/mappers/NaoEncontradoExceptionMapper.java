@@ -14,7 +14,7 @@ public class NaoEncontradoExceptionMapper implements ExceptionMapper<NaoEncontra
 	@Override
 	public Response toResponse(final NaoEncontradoException exception) {
 		LOGGER.debug(exception);
-		return Response.status(Response.Status.NOT_FOUND).entity(getErrorModel(exception)).build();
+		return Response.status(getErrorStatus(exception)).entity(getErrorModel(exception)).build();
 	}
 
 	protected String getErrorModel(final NaoEncontradoException exception) {

@@ -14,7 +14,7 @@ public class InfraExceptionMapper implements ExceptionMapper<InfraException> {
 	@Override
 	public Response toResponse(final InfraException exception) {
 		LOGGER.debug(exception);
-		return Response.status(Response.Status.NOT_FOUND).entity(getErrorModel(exception)).build();
+		return Response.status(getErrorStatus(exception)).entity(getErrorModel(exception)).build();
 	}
 
 	protected String getErrorModel(final InfraException exception) {

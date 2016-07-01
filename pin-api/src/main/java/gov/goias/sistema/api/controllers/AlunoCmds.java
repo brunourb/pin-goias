@@ -6,6 +6,7 @@ import gov.goias.sistema.exception.InfraException;
 import gov.goias.sistema.negocio.AlunoService;
 import io.swagger.annotations.*;
 import javaslang.control.Try;
+import jersey.repackaged.com.google.common.io.ByteStreams;
 import org.apache.log4j.Logger;
 import org.dozer.DozerBeanMapper;
 import org.glassfish.jersey.media.multipart.FormDataContentDisposition;
@@ -15,11 +16,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import javax.annotation.security.RolesAllowed;
 import javax.servlet.http.HttpServletRequest;
 import javax.ws.rs.*;
-import javax.ws.rs.core.Context;
-import javax.ws.rs.core.MediaType;
-import javax.ws.rs.core.Response;
-import javax.ws.rs.core.UriInfo;
+import javax.ws.rs.core.*;
+import java.io.File;
+import java.io.IOException;
 import java.io.InputStream;
+import java.net.URI;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 
 @Path("/aluno")
 @Api(value = "Operações de CRUD em Aluno", description = "Operações CRUD de Aluno")
@@ -102,9 +105,9 @@ public class AlunoCmds {
     /**
      * Remove um Aluno no sistema
      *
-     * @param id ID do aluno
+     * @param id                  ID do aluno
      * @param uploadedInputStream Arquivo enviado
-     * @param fileDetail Detalhes do arquivo
+     * @param fileDetail          Detalhes do arquivo
      */
     @POST
     @Path("/upload/{id}")
@@ -117,12 +120,41 @@ public class AlunoCmds {
     })
     public Response enviarDocumento(
             @ApiParam(value = "ID do aluno", required = true) @PathParam("id") Integer id,
-            @ApiParam(value = "Arquivo para upload", required = true)  @FormDataParam("file") InputStream uploadedInputStream,
-            @ApiParam(value = "Detalhes do arquivo", hidden = true)  @FormDataParam("file") FormDataContentDisposition fileDetail) {
+            @ApiParam(value = "Arquivo para upload", required = true) @FormDataParam("file") InputStream uploadedInputStream,
+            @ApiParam(value = "Detalhes do arquivo", hidden = true) @FormDataParam("file") FormDataContentDisposition fileDetail) {
 
         alunoService.armazenaArquivo(id, fileDetail.getFileName(), uploadedInputStream);
 
         return Response.ok().build();
+    }
+
+    @GET
+    @Path("/download")
+    @Produces({MediaType.APPLICATION_OCTET_STREAM})
+    @ApiOperation(value = "Download do logo do governo de Goiás.", notes = "Download do logo do governo de Goiás")
+    @ApiResponses(value = {
+            @ApiResponse(code = 200, message = "OK."),
+            @ApiResponse(code = 500, message = "Erro interno.")
+    })
+    public Response download() {
+        StreamingOutput fileStream = new StreamingOutput() {
+            @Override
+            public void write(java.io.OutputStream output) throws IOException, WebApplicationException {
+                try {
+                    InputStream is = getClass().getResourceAsStream("/logo_goias.png");
+                    byte[] data = new byte[is.available()];
+                    is.read(data);
+                    output.write(data);
+                    output.flush();
+                } catch (Exception e) {
+                    throw new InfraException(e);
+                }
+            }
+        };
+        return Response
+                .ok(fileStream, MediaType.APPLICATION_OCTET_STREAM)
+                .header("content-disposition", "attachment; filename = logo_goias.png")
+                .build();
     }
 
     /**
@@ -140,7 +172,6 @@ public class AlunoCmds {
     public Response semPermissao() {
         return Response.ok().build();
     }
-
 
 
 }
