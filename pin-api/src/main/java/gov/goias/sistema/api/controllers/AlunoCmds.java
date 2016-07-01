@@ -2,13 +2,14 @@ package gov.goias.sistema.api.controllers;
 
 import gov.goias.sistema.api.mappers.AlunoModelMapper;
 import gov.goias.sistema.api.view.model.Aluno;
+import gov.goias.sistema.exception.InfraException;
 import gov.goias.sistema.negocio.AlunoService;
-import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiOperation;
-import io.swagger.annotations.ApiResponse;
-import io.swagger.annotations.ApiResponses;
+import io.swagger.annotations.*;
+import javaslang.control.Try;
 import org.apache.log4j.Logger;
 import org.dozer.DozerBeanMapper;
+import org.glassfish.jersey.media.multipart.FormDataContentDisposition;
+import org.glassfish.jersey.media.multipart.FormDataParam;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.annotation.security.RolesAllowed;
@@ -18,6 +19,7 @@ import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.UriInfo;
+import java.io.InputStream;
 
 @Path("/aluno")
 @Api(value = "Operações de CRUD em Aluno", description = "Operações CRUD de Aluno")
@@ -98,8 +100,33 @@ public class AlunoCmds {
     }
 
     /**
-     * Operação para retorno de Erro de Acesso
+     * Remove um Aluno no sistema
      *
+     * @param id ID do aluno
+     * @param uploadedInputStream Arquivo enviado
+     * @param fileDetail Detalhes do arquivo
+     */
+    @POST
+    @Path("/upload/{id}")
+    @Consumes(MediaType.MULTIPART_FORM_DATA)
+    @Produces({MediaType.APPLICATION_JSON})
+    @ApiOperation(value = "Upload de documentos do aluno.", notes = "Envio de documentos do aluno, como o RG, Declarações, etc.")
+    @ApiResponses(value = {
+            @ApiResponse(code = 200, message = "OK."),
+            @ApiResponse(code = 500, message = "Erro interno.")
+    })
+    public Response enviarDocumento(
+            @ApiParam(value = "ID do aluno", required = true) @PathParam("id") Integer id,
+            @ApiParam(value = "Arquivo para upload", required = true)  @FormDataParam("file") InputStream uploadedInputStream,
+            @ApiParam(value = "Detalhes do arquivo", hidden = true)  @FormDataParam("file") FormDataContentDisposition fileDetail) {
+
+        alunoService.armazenaArquivo(id, fileDetail.getFileName(), uploadedInputStream);
+
+        return Response.ok().build();
+    }
+
+    /**
+     * Operação para retorno de Erro de Acesso
      */
     @DELETE
     @Path("/noaccess")
@@ -113,5 +140,7 @@ public class AlunoCmds {
     public Response semPermissao() {
         return Response.ok().build();
     }
+
+
 
 }
