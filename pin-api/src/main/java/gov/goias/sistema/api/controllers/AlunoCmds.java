@@ -113,7 +113,11 @@ public class AlunoCmds {
     @Path("/upload/{id}")
     @Consumes(MediaType.MULTIPART_FORM_DATA)
     @Produces({MediaType.APPLICATION_JSON})
-    @ApiOperation(value = "Upload de documentos do aluno.", notes = "Envio de documentos do aluno, como o RG, Declarações, etc.")
+    @ApiOperation(value = "Upload de documentos do aluno.", notes = "Envio de documentos do aluno, como o RG, Declarações, etc.", extensions = {
+            @Extension(name = "x-mask", properties = {
+                    @ExtensionProperty(name = "file", value = "pdf, doc, jpg")
+            })
+    })
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "OK."),
             @ApiResponse(code = 500, message = "Erro interno.")
@@ -131,7 +135,11 @@ public class AlunoCmds {
     @GET
     @Path("/download")
     @Produces({MediaType.APPLICATION_OCTET_STREAM})
-    @ApiOperation(value = "Download do logo do governo de Goiás.", notes = "Download do logo do governo de Goiás")
+    @ApiOperation(value = "Download do logo do governo de Goiás.", notes = "Download do logo do governo de Goiás", extensions = {
+            @Extension(name = "x-mask", properties = {
+                    @ExtensionProperty(name = "Response", value = "png, jpg, gif")
+            })
+    })
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "OK."),
             @ApiResponse(code = 500, message = "Erro interno.")
