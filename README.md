@@ -2,7 +2,7 @@
 
 ## Documentação
 	
-[Padrão de Interoperabilidade](pin-goias/pin-doc/Padrão de Interoperabilidade.odt)
+[Padrão de Interoperabilidade](https://github.com/goias/pin-goias/blob/master/pin-doc/Padr%C3%A3o%20de%20Interoperabilidade.odt?raw=true)
 		
 
 ## Samples
