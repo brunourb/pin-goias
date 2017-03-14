@@ -1,16 +1,26 @@
-## Padrão de interoperabilidade de serviços - Goiás: Implementação de Referência utilizando a tecnologia Java
+# Padrão de interoperabilidade de serviços - Goiás: Implementação de Referência utilizando a tecnologia Java
 
-### Principais Tecnologias
+## Documentação
+	
+[Padrão de Interoperabilidade](pin-goias/pin-doc/Padrão de Interoperabilidade.odt)
+		
+
+## Samples
+
+	
+### Java		
+
+#### Principais Tecnologias
 
 Java 8, javaslang, Jersey2, Swagger 2.0 (OpenAPI)
 
-### OpenAPI
+#### OpenAPI
 
 A especificação OpenAPI foi criada por um consórcio, a Open API Iniciative (OAI), formado por especialistas que reconhecem a importância da padronização de como as APIs REST são descritas. Várias grandes empresas são membros deste consórcio, entre elas, a IBM, Google, Microsoft, SmartBear (que doou a especificação do Swagger 2.0 como base para a primeira versão da especificação OpenAPI), PayPal, entre outros.
 
 A especificação utilizada está disponível em: http://swagger.io/specification/
 
-### Swagger 2.0
+#### Swagger 2.0
 
 A implementação da especificação utilizada foi o framework Swagger 2.0, que fornece um conjunto de bibliotecas e anotações para a geração da documentação da API durante a implementação do serviço.
 
@@ -59,7 +69,7 @@ public class Aluno {
     private String nome;
 ```
 
-### Padrão da Informação
+#### Padrão da Informação
 
 Descrição dos tipos de dados e semântica utilizadas na comunicação entre os sistemas. As informações transmitidas entre os sistemas não devem utilizar máscaras em sua representação.
 
@@ -106,15 +116,15 @@ Descrição dos tipos de dados e semântica utilizadas na comunicação entre os
   }
 ```
 
-### Estrutura do Projeto: pin-goias
+#### Estrutura do Projeto: pin-goias
 
 O projeto pin-goias está dividido em dois módulos: pin-dominio e pin-api.
 
-#### pin-dominio
+##### pin-dominio
 Contém as classes de serviços para acesso aos dados de domínio da aplicação.
 Neste exemplo, os dados retornados estão armazenados em mapas no próprio código, simulando um acesso à base de dados.
 
-#### pin-api
+##### pin-api
 Contém as classes de definição dos serviços REST e sua documentação utilizando o Swagger 2.0.
 Este módulo contém uma interface fornecida pelo framework Swagger para acesso à documentação dos serviços REST disponibilizados, além de fornecer uma API para testes dos serviços.
 
