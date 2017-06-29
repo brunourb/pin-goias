@@ -48,7 +48,6 @@ public class AlunoCmds {
      * @param aluno Informações do aluno
      */
     @PUT
-    @Path("/salvar")
     @Consumes({MediaType.APPLICATION_JSON})
     @ApiOperation(value = "Armazena o registro do aluno.", notes = "Armazena o registro do aluno na base de dados.")
     @ApiResponses(value = {
@@ -68,7 +67,7 @@ public class AlunoCmds {
      * @param id Identificador do aluno
      */
     @PUT
-    @Path("/alterar/{id}")
+    @Path("/{id}")
     @Consumes({MediaType.APPLICATION_JSON})
     @ApiOperation(value = "Atualiza o registro do aluno.", notes = "Atualiza o registro do aluno a partir do ID.")
     @ApiResponses(value = {
@@ -89,7 +88,7 @@ public class AlunoCmds {
      * @param id Identificador do aluno
      */
     @DELETE
-    @Path("/excluir/{id}")
+    @Path("/{id}")
     @Produces({MediaType.APPLICATION_JSON})
     @ApiOperation(value = "Exclui o aluno.", notes = "Exclui o aluno a partir do ID.")
     @ApiResponses(value = {

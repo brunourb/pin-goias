@@ -59,7 +59,6 @@ public class AlunoQueries {
     }
 
     @GET
-    @Path("/listar")
     @Produces(MediaType.APPLICATION_JSON)
     @ApiOperation(value = "Obtem uma lista de alunos.", notes = "Obtém uma lista de alunos paginada.", extensions = {
             @Extension(name = "x-mask", properties = {

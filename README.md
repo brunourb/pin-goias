@@ -41,7 +41,6 @@ A implementação da especificação utilizada foi o framework Swagger 2.0, que 
      * @param aluno Informações do aluno
      */
     @PUT
-    @Path("/salvar")
     @Consumes({MediaType.APPLICATION_JSON})
     @ApiOperation(value = "Armazena o registro do aluno.", notes = "Armazena o registro do aluno na base de dados.")
     @ApiResponses(value = {
