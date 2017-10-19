@@ -12,23 +12,54 @@
 
 #### Principais Tecnologias
 
-Java 8, javaslang, Jersey2, Swagger 2.0 (OpenAPI)
+Java 8, Spring Web MVC, Swagger 2.0 (OpenAPI)
 
 #### OpenAPI
 
 A especificação OpenAPI foi criada por um consórcio, a Open API Iniciative (OAI), formado por especialistas que reconhecem a importância da padronização de como as APIs REST são descritas. Várias grandes empresas são membros deste consórcio, entre elas, a IBM, Google, Microsoft, SmartBear (que doou a especificação do Swagger 2.0 como base para a primeira versão da especificação OpenAPI), PayPal, entre outros.
 
-A especificação utilizada está disponível em: http://swagger.io/specification/
+A especificação utilizada está disponível em: https://swagger.io/docs/specification/2-0/adding-examples/
 
 #### Swagger 2.0
 
 A implementação da especificação utilizada foi o framework Swagger 2.0, que fornece um conjunto de bibliotecas e anotações para a geração da documentação da API durante a implementação do serviço.
 
+Observação: Para API que serão consumidas pela ferramenta WSO2 - API Manager, utilizar somente a especificação Swagger 2. Não utilizar a especificação Open Api 3.0, pois o WSO2 - API Manager, ainda não lê swagger nesta versão/especifica 3.0
+
+#### Maven dependências
+
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+			<version>5.0.0.RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger2</artifactId>
+			<version>2.7.0</version>
+		</dependency>
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger-ui</artifactId>
+			<version>2.7.0</version>
+		</dependency>
+	</dependencies>
+
 ##### @API
 
 ```java
-    @Path("/aluno")
-    @Api(value = "Operações de CRUD em Aluno", description = "Operações CRUD de Aluno")
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
+
+    @RestController
+    @RequestMapping("/aluno")
+    @Api(value = "Operações de CRUD em Aluno")
     public class AlunoCmds {
 ```
 
@@ -40,9 +71,8 @@ A implementação da especificação utilizada foi o framework Swagger 2.0, que 
      *
      * @param aluno Informações do aluno
      */
-    @PUT
-    @Consumes({MediaType.APPLICATION_JSON})
     @ApiOperation(value = "Armazena o registro do aluno.", notes = "Armazena o registro do aluno na base de dados.")
+    @RequestMapping(path = "/salvar", method = RequestMethod.PUT,  consumes = MediaType.APPLICATION_JSON_VALUE)
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "OK."),
             @ApiResponse(code = 500, message = "Erro interno.")
@@ -57,7 +87,11 @@ A implementação da especificação utilizada foi o framework Swagger 2.0, que 
 
 ##### @ApiModel e @ApiModelProperty
 
+
 ```java
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+
 @ApiModel(value = "Aluno", description = "Informações de aluno")
 public class Aluno {
 
