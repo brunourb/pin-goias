@@ -72,22 +72,19 @@ import org.springframework.web.bind.annotation.RestController;
      *
      * @param aluno Informações do aluno
      */
+    @PostMapping
+    @ResponseStatus(HttpStatus.CREATED)
+    @ApiResponse(code = 201, message = "Criado.")
     @ApiOperation(value = "Armazena o registro do aluno.", notes = "Armazena o registro do aluno na base de dados.")
-    @RequestMapping(path = "/salvar", method = RequestMethod.PUT,  consumes = MediaType.APPLICATION_JSON_VALUE)
-    @ApiResponses(value = {
-            @ApiResponse(code = 200, message = "OK."),
-            @ApiResponse(code = 500, message = "Erro interno.")
-    })
-    public Response salvar(Aluno aluno) {
-        gov.goias.sistema.entidades.Aluno a = mapper.map(aluno, gov.goias.sistema.entidades.Aluno.class);
-        alunoService.salvar(a);
-
-        return Response.ok().build();
-    }
+    public void create(@RequestBody Aluno aluno,HttpServletResponse response) {    
+        log.trace("Criando aluno {}", aluno);
+        aluno.setId(null);
+        aluno = service.save(aluno);
+        response.addHeader(HttpHeaders.LOCATION,"/api/alunos/" + aluno.getId());
+    }        
 ```
 
 ##### @ApiModel e @ApiModelProperty
-
 
 ```java
 import io.swagger.annotations.ApiModel;
@@ -108,7 +105,7 @@ public class Aluno {
 Descrição dos tipos de dados e semântica utilizadas na comunicação entre os sistemas. As informações transmitidas entre os sistemas não devem utilizar máscaras em sua representação.
 
 ```
-    "/aluno/{id}": {
+    "/alunos/{id}": {
       "get": {
         "tags": [
           "Query em Aluno"
@@ -152,14 +149,8 @@ Descrição dos tipos de dados e semântica utilizadas na comunicação entre os
 
 #### Estrutura do Projeto: pin-goias
 
-O projeto pin-goias está dividido em dois módulos: pin-dominio e pin-api.
-
-##### pin-dominio
 Contém as classes de serviços para acesso aos dados de domínio da aplicação.
-Neste exemplo, os dados retornados estão armazenados em mapas no próprio código, simulando um acesso à base de dados.
-
-##### pin-api
 Contém as classes de definição dos serviços REST e sua documentação utilizando o Swagger 2.0.
-Este módulo contém uma interface fornecida pelo framework Swagger para acesso à documentação dos serviços REST disponibilizados, além de fornecer uma API para testes dos serviços.
+contém uma interface fornecida pelo framework Swagger para acesso à documentação dos serviços REST disponibilizados, além de fornecer uma API para testes dos serviços.
 
 
