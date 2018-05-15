@@ -1,0 +1,1089 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+        <meta name="description" content="Responsive Bootstrap Landing Page Template">
+        <meta name="keywords" content="Bootstrap, Landing page, Template, Registration, Landing">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <meta name="author" content="DiogoVanderlei, Grayrids">
+        <title>Goiás :: Segplan :: SCTI :: Pin</title>
+
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <!-- Font Awesome CSS -->
+        <link rel="stylesheet" href="fonts/font-awesome.min.css" type="text/css" media="screen">
+        <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+
+        <!-- Include roboto.css to use the Roboto web font, material.css to include the theme and ripples.css to style the ripple effect -->
+        <link href="css/material.min.css" rel="stylesheet">
+        <link href="css/ripples.min.css" rel="stylesheet">
+        <link href="css/main.css" rel="stylesheet">
+        <link href="css/responsive.css" rel="stylesheet">
+        <link href="css/animate.min.css" rel="stylesheet">
+        <!--<link rel="stylesheet" href="js/lightbox2-master/dist/css/lightbox.min.css">-->
+        <link href="css/segplan-guidelines.css" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="navbar navbar-invers menu-wrap" style="overflow-x: auto; overflow-y: auto;" >
+
+            <div class="navbar-header text-center"><a class="navbar-brand logo-right" href="javascript:void(0)"><!--<i class="mdi-image-timelapse"></i>UI Goiás--> <img src="img/features/governo-estado-inovador-pas.png"></a></div>
+            <div class="text-center" style="text-align: left; margin-bottom: 40px;">
+                <a href="#ui-goias"
+                   style="
+                    font-family: RobotoDraft,Roboto,Helvetica Neue,Helvetica,Arial,sans-serif;
+                    font-weight: 100;
+                    font-size: 22px;
+                    margin-left: 18px;
+                    color: #fff;"> Pin Goiás<div class="ripple-wrapper"></div></a>
+            </div>
+
+            <ul class="nav navbar-nav main-navigation">
+                <li>                 <a href="#objetivo">Documento</a></li>
+                <li class="subnivel"><a href="#objetivo">Objetivo</a></li>
+                <li class="subnivel"><a href="#infobasico">Informações Básicas</a></li>
+                <li class="subnivel"><a href="#versionamento">Versionamento de Serviços</a></li>
+                <li class="subnivel"><a href="#interface">Interface de Interoperabilidade</a></li>
+                <li class="subnivel"><a href="#intercambio">Linguagem de intercâmbio de dados</a></li>
+                <li class="subnivel"><a href="#padraodocu">Padrão de documentação</a></li>
+                <li class="subnivel"><a href="#padraoinfo">Padrão da informação</a></li>
+                <li class="subnivel"><a href="#tipodado">Tipos de dados e sua representação</a></li>
+                <li class="subnivel"><a href="#mascara">Máscara de atributos</a></li>
+                <li class="subnivel"><a href="#recursos">Recursos e representações</a></li>                
+                <li class="subnivel"><a href="#paginacao">Paginação</a></li>
+                <li class="subnivel"><a href="#entidades">Entiades de Tabelas Corporativas</a></li>
+                <li class="subnivel"><a href="#retorno">Códigos de retorno de chamada HTTP</a></li>
+                <li class="subnivel"><a href="#infraestrutura">Infraestrutura e Segurança</a></li>
+                <li class="subnivel"><a href="#authenticacao">Autenticação</a></li>
+                <li class="subnivel"><a href="#serviconew">Disponibilização de serviço</a></li>
+                <li class="subnivel"><a href="#servicooff">Desativação de serviço</a></li>
+                <li class="subnivel"><a href="#servicoupdate">Atualização de serviço</a></li>
+                <li class="subnivel"><a href="#apiswagger">Ferramentas e APIs Swagger</a></li>
+                <li class="subnivel"><a href="#exemploswagger">Exemplo Swagger</a></li>                
+                <li class="subnivel"><a href="#exemplocodigo">Exemplos de Código</a></li>
+            </ul>
+            <button class="close-button" id="close-button">Fechar Menu</button>
+        </div>
+        <div class="content-wrap">
+            <header class="hero-area" id="ui-goias">
+            <div class="container">
+                    <div class="col-md-12">
+                        <div class="navbar navbar-inverse sticky-navigation navbar-fixed-top" role="navigation" data-spy="affix"
+                             data-offset-top="200">
+                            <div class="container">
+
+                                <div class="navbar-right" style="margin-right: -13px;">
+                                    <button class="menu-icon" id="open-button">
+                                        <i class="mdi-navigation-menu"></i>
+                                    </button>
+                                </div>
+                                <div class="navbar-header">
+                                    <a class="logo-left " href="index.html"><img src="img/pin/PIN.png" width="100px" height="60px"/>Padrão de Interoperabilidade entre Sistemas</a>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contents text-right">
+                        <h1 class="wow fadeInRight" data-wow-duration="1000ms" data-wow-delay="300ms">Diretrizes para implementação de serviços para recuperação de informações estratégicas</h1>
+                        <p class="wow fadeInRight" data-wow-duration="1000ms" data-wow-delay="400ms"></p>
+                    </div>
+            </div>
+            </header>
+            <section id="objetivo" class="section">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12 wow fadeInLeft" data-wow-duration="1000ms" data-wow-delay="300ms">
+                            <div class="feature-item">
+                                <h3 class="title-small">Objetivo</h3>
+                                <p>O presente documento tem como objetivo fornecer as definições básicas para a interoperabilidade entre os sistemas.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="infobasico" class="section main-feature-gray">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12 wow fadeInLeft" data-wow-duration="1000ms" data-wow-delay="300ms">
+                            <div class="feature-item">
+                                <h3 class="title-small">Informações básicas do serviço</h3>
+                                <p>Informações necessárias para a utilização de um serviço pela SEGPLAN.</p>
+                                <ul>
+                                    <li><strong>Nome:</strong> Identificador do serviço.</li>
+                                    <li><strong>Descrição:</strong> Descrição e características do serviço.</li>
+                                    <li><strong>Versão:</strong> Versão atual do serviço.</li>
+                                    <li><strong>Responsável:</strong> Informações do responsável pelo serviço no fornecedor.
+                                        <ol>
+                                            <li><strong>Órgão:</strong> Órgão responsável pelo serviço.</li>
+                                            <li><strong>Setor/Área:</strong> Área responsável pela manutenção do serviço.</li>
+                                            <li><strong>Nome:</strong> Nome do responsável pelo serviço (pessoa ou área).</li>
+                                            <li><strong>Função:</strong> Função do responsável pelo serviço.</li>
+                                            <li><strong>Email:</strong> Email de contato do responsável pelo serviço.</li>
+                                            <li><strong>Telefone:</strong> Telefone de contato do responsável pelo serviço (informar todos os disponíveis).</li>
+                                        </ol>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="versionamento" class="section">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12 wow fadeInRight" data-wow-duration="1000ms" data-wow-delay="300ms">
+                            <div class="feature-item">
+                                <h3 class="title-small">Versionamento de Serviços</h3>
+                                <p>O versionamento dos serviços serão especificadas na URL do serviço disponibilizado. As URLs deverão seguir o seguinte padrão:</p>
+                                <p><pre><code>&lt;Url do Serviço&gt;/&lt;Versão&gt;/&lt;Operações&gt;</code></pre></p>
+                                <p>onde:</p>
+                                <ul>
+                                    <li>
+                                        <ul style="margin:10px 0 0 2%; ">
+                                            <li><b>&bull; URL do Serviço:</b>  - Define a URL base para acesso ao serviço. Por exemplo: http://localhost:8080/pin-api/api .</li>
+                                            <li><b>&bull; Versão:</b>  - Define a versão do serviço disponibilizada. Este valor deve conter apenas números e os caracteres “.”, “-” ou “_”. Por exemplo: 1.0.0, 1-0-0 ou 1_0_0.</li>
+                                            <li><b>&bull; Operações:</b>  - As operações do serviço disponibilizado. Por exemplo, “aluno/lista”.</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                                <p>Exemplo:</p>
+                                <p><pre><code>http://localhost:8080/pin-api/api/1.0.0/aluno/listar</code></pre></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="interface" class="section main-feature-gray">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12 wow fadeInLeft" data-wow-duration="1000ms" data-wow-delay="300ms">
+                            <div class="feature-item">
+                                <h3 class="title-small">Interface de interoperabilidade</h3>
+                                <p> Os serviços deverão ser expostos através de webservices que utilizam o padrão RESTful (Representational State Transfer).</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="intercambio" class="section">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12 wow fadeInLeft" data-wow-duration="1000ms" data-wow-delay="300ms">
+                            <div class="feature-item">
+                                <h3 class="title-small">Linguagem de intercâmbio de dados</h3>
+                                <p> As informações devem ser disponibilizadas em um dos seguintes padrões de intercâmbio de dados:</p>
+                                <p><b>JSON</b>(Javascript Object Notation)</p>
+                                <p><a href="http://www.ietf.org/rfc/rfc4627.txt" target="blank" >http://www.ietf.org/rfc/rfc4627.txt</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="padraodocu" class="section main-feature-gray">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12 wow fadeInLeft" data-wow-duration="1000ms" data-wow-delay="300ms">
+                            <div class="feature-item">
+                                <h3 class="title-small">Padrão de documentação</h3>
+                                <p> Utilização da especificação Open API, no formato JSON</p>
+                                <ul>
+                                    <li><a href="http://openapis.org" target="blank">http://openapis.org</a></li>
+                                    <li>A Open API fornece uma especificação aberta que define metadados para descrever APIs REST, a primeira versão desta especificação foi baseada na especificação 2.0 do Framework Swagger (<a href="http://swagger.io/specification/" target="blank" >http://swagger.io/specification</a>)</li>
+                                </ul>
+                                <br>
+                                <p> A especificação OpenAPI foi criada por um consórcio, a Open API Iniciative (OAI), formado por especialistas que reconhecem a importância da padronização de como as APIs REST são descritas. Várias grandes empresas são membros deste consórcio, entre elas, a IBM, Google, Microsoft, SmartBear (que doou a especificação do Swagger 2.0 como base para a primeira versão da especificação OpenAPI), PayPal, entre outros.</p>
+                                <br>
+                                <p> Várias dessas empresas já utilizam este padrão como base para a documentação de serviços REST, por exemplo, a IBM, que disponibiliza as APIs do IBM Watson Developer Cloud utilizando o <i>framework Swagger</i> (base da especificação OpenAPI) para a documentação destas APIs disponibilizadas (<a href="https://watson-api-explorer.mybluemix.net" target="blank" >https://watson-api-explorer.mybluemix.net</a>)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="padraoinfo" class="section">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12 wow fadeInLeft" data-wow-duration="1000ms" data-wow-delay="300ms">
+                            <div class="feature-item">
+                                <h3 class="title-small">Padrão da informação</h3>
+                                <p> Descrição dos tipos de dados e semântica utilizadas na comunicação entre os sistemas. As informações transmitidas entre os sistemas não devem utilizar máscaras em sua representação. </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="tipodado" class="section main-feature-gray">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12 wow fadeInLeft" data-wow-duration="1000ms" data-wow-delay="300ms">
+                            <div class="feature-item">
+                                <h3 class="title-small">Tipos de dados e sua representação</h3>
+                                <div class="table-responsive">
+                                    <table class="table table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th>Tipo de Dado</th>
+                                                <th>Exemplo</th>
+                                                <th>Representação JSON</th>
+                                                <th>Documentação Open API</th>
+                                            </tr>
+                                        </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td rowspan="3" style="vertical-align: middle" >Alfanumérico(String)</td>
+                                                    <td>Nome: Fulano Beltrano</td>
+                                                    <td>{"nome": "Fulano Beltrano"}</td>
+                                                    <td>"nome": {"description": "Nome do usuário", "type": "string", "maxLength": "100"}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Cpf: 999.999.999-99</td>
+                                                    <td>{"cpf": "99999999999"}</td>
+                                                    <td>"cpf": {"description": "CPF do usuário", "type": "string"}</td>
+                                                <tr>
+                                                    <td>Telefone: (62) 99999-9999</td>
+                                                    <td>{"telefone": "6299999999"}</td>
+                                                    <td>"telefone": {"description": "Telefone do usuário", "type": "string"}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Numérico(Inteiro)</td>
+                                                    <td>Atendimentos: 1.298</td>
+                                                    <td>{"atendimentos": "1298"}</td>
+                                                    <td>"atendimentos": {"description": "Quantidade de atendimentos","type": "integer","minimum": "0"}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Numérico(Ponto Flutuante)</td>
+                                                    <td>Renda 5.000,00</td>
+                                                    <td>{"renda": "5000.00"}</td>
+                                                    <td>"renda": {"description": "Renda bruta do usuário", "type": "number", "format": "double", "minimum": "0"}</td>
+                                                <tr>
+                                                    <td rowspan="2" style="vertical-align: middle">Lógico (Booleano)</td>
+                                                    <td>Aprovado: Sim</td>
+                                                    <td>{"aprovado": "true"}</td>
+                                                    <td rowspan="2" style="vertical-align: middle" >"aprovado" : {"description": {"Indicador de aprovação", "type": "boolean"}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Aprovado: Não</td>
+                                                    <td>{"aprovado": "false"}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td rowspan="2" style="vertical-align: middle">Data e Hora</td>
+                                                    <td>Nascimento: 05/10/1990</td>
+                                                    <td>{"nascimento": "1990-10-05"}</td>
+                                                    <td>"nascimento": {"description": "Data de nascimento", "type": "string", "format": "date"}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Ocorrência: 02/01/2015 às 19:37:43</td>
+                                                    <td>{"ocorrencia": "2015-01-02T19:37:43"}</td>
+                                                    <td>"ocorrencia": {"description": "Data e hora da ocorrência", "type": "string","format": "date-time"}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td rowspan="2" style="vertical-align: middle">Vazio (null)</td>
+                                                    <td>Idioma: Não Informado</td>
+                                                    <td>{"idioma": "null"}</td>
+                                                    <td>"idioma": {"description": "Quantidade de atendimentos", "type": "string"}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Idade: Não Informado</td>
+                                                    <td>{"idade": "null"}</td>
+                                                    <td>"idioma": {"description": "Quantidade de atendimentos", "type": "string", "minimum" : "0"}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="vertical-align: middle">Listas</td>
+                                                    <td>Telefones:
+                                                        <br>
+                                                        - Numero: (62) 99999-9999
+                                                        <br>
+                                                        - Numero: (62) 98888-8888
+                                                    </td>
+                                                    <td style="vertical-align: middle">{"telefones": [{"telefone": "62999999999"}, {"telefone": "62988888888"}]}</td>
+                                                    <td style="vertical-align: middle">"telefones": {"description": "Telefones de contato", "type": "array", "items": { "$ref": "#definitions/telefone"}, "telefone": {"description": "Telefone de contato", "type": "string"}}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Parâmetros do tipo Arquivo</td>
+                                                    <td>A definição de um parâmetro do tipo Arquivo, só pode ser definido a partir da definição de parâmetro do tipo form.</td>
+                                                    <td>{"name": "comprovantePagamento", "in": "formData", "description": "Recibo do pagamento", "required": true, "type": "file"}</td>
+                                                    <td>&nbsp;</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Retorno do tipo Arquivo</td>
+                                                    <td>A definição de um retorno do tipo Arquivo, é realizado através da tag <i>schema</i>.</td>
+                                                    <td>"200": {"description": "PDF do comprovante", "schema": { "type": "file"}}</td>
+                                                    <td>&nbsp;</td>
+                                                </tr>
+                                            </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="mascara" class="section">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12 wow fadeInLeft" data-wow-duration="1000ms" data-wow-delay="300ms">
+                            <div class="feature-item">
+                                <h3 class="title-small">Máscara de atributos</h3>
+                                <p> Os serviços disponibilizados podem ser consumidos por aplicações que fornecem uma interface com o usuário. Desta forma, pode ser necessário informações adicionais, como a máscara de apresentação do atributo. Para este caso, esta informação será especificada utilizando uma extensão da especificação definida como “x-mask”, definida na documentação da operação que fornece esta informação.</p>
+                                <p> Exemplo:</p>
+                                <p>
+                                    <pre>
+                                        "/aluno/{id}": {
+                                            "get": {
+                                                "tags": ["Query em Aluno"],
+                                                "summary": "Obtem o aluno.",
+                                                "description": "Obtem o aluno a partir do ID.",
+                                                "operationId": "consultar",
+                                                "produces": ["application/json"],
+                                                "parameters": [{"name": "id",
+                                                                    "in": "path",
+                                                                    "required": true,
+                                                                    "type": "integer",
+                                                                    "format": "int32"
+                                                                }
+                                                                ],
+                                                "responses": {"200": {"description": "OK.", "schema": {"$ref": "#/definitions/Aluno"}},
+                                                                "404": {"description": "Aluno não encontrado."},
+                                                                "500": {"description": "Erro interno."}},
+                                               "x-mask": {"nascimento": "dd/MM/yyyy","id": "00000000"}
+                                            }
+                                        }
+                                    </pre>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="recursos" class="section main-feature-gray">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12 wow fadeInLeft" data-wow-duration="1000ms" data-wow-delay="300ms">
+                            <div class="feature-item">
+                                <h3 class="title-small">Recursos e Representações</h3>
+                                <p>Seguindo a definição de REST da Universidade da California em Irvine. O recurso é a abstração chave no estilo arquitetural para Apis Web REST. Sendo assim algumas recomendações são feitas para nomeá-los.<a href="https://www.ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm" target="blank">https://www.ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm</a> .</p>
+                                <p>Deve-se evitar a utilização de verbos para nomear operações em recursos, limitando a utilização de substantivos. Ex: /aluno/inserir.</p>
+                                <p>Essa informação pode ser concluída através do método HTTP POST no recurso Aluno.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="paginacao" class="section">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12 wow fadeInLeft" data-wow-duration="1000ms" data-wow-delay="300ms">
+                            <div class="feature-item">
+                                <h3 class="title-small">Paginação</h3>
+                                <p>Caso seja necessário definir uma forma de paginação para o retorno dos dados solicitados ao serviço, deve-se informar as seguintes informações:</p>
+                                <ul>
+                                    <li>Dados de Consulta
+                                        <ol>
+                                            <li>Quantidade de registros
+                                                <ol>
+                                                    <li>Nome do Parâmetro: limit</li>
+                                                    <li>Tipo: Query String</li>
+                                                    <li>Valor: Inteiro</li>
+                                                    <li>Valor padrão: definido pelo fornecedor</li>
+                                                    <li>Exemplo: pessoa?idade=18&limit=1000</li>
+                                                </ol>
+                                            </li>
+                                            <li>Inicio da consulta
+                                                <ol>
+                                                    <li>Nome do parâmetro: offset</li>
+                                                    <li>Tipo: Query String</li>
+                                                    <li>Valor: Inteiro</li>
+                                                    <li>Valor padrão: 0</li>
+                                                    <li>Exemplo: pessoa?idade=18&offset=2000&limit=1000</li>
+                                                </ol>
+                                            </li>                                                
+                                        </ol>
+                                    </li>
+                                    <li>Dados de Resposta
+                                        <ol>
+                                            <li>Códigos de Status HTTP
+                                                <ol>
+                                                    <li>Consulta sem retorno de dados:  HTTP 204</li>
+                                                    <li>Consulta com somente uma página: HTTP 200</li>
+                                                    <li>Consulta com paginação: HTTP 206</li>
+                                                    <li>Consulta com tamanho dos parâmetros limit e offset acima dos valores padrão: HTTP 416</li>
+                                                </ol>
+
+                                            </li>
+                                            <li>Cabeçalhos de Resposta:
+                                                <ol>
+                                                    <li>O cabeçalho de resposta segue o padrão de Content Range, definido pela IETF (<a href="https://tools.ietf.org/html/rfc7233" target="blank">https://tools.ietf.org/html/rfc7233</a>)</li>
+                                                    <li>Paginação atual
+                                                        <ol>
+                                                            <li>Nome do parâmetro: Content-Range</li>
+                                                            <li>Exemplo: 0-999/10000</li>
+                                                        </ol>
+                                                    </li>
+                                                </ol>
+                                            </li>
+                                        </ol>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>            
+            <section id="entidades" class="section main-feature-gray">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12 wow fadeInLeft" data-wow-duration="1000ms" data-wow-delay="300ms">
+                            <div class="feature-item">
+                                <h3 class="title-small">Entidades de Tabelas Corporativas</h3>
+                                <div class="table-responsive">
+                                    <table class="table table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th>Entidade</th>
+                                                <th>Representação JSON</th>
+                                                <th>Documentação Open API</th>
+                                                <th>Identificadores</th>
+                                            </tr>
+                                        </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td rowspan="2" style="vertical-align: middle">Município (Município, Aglomerado, Distrito, Lugarejo ou Povoado, Região Asdministrativa)</td>
+                                                    <td rowspan="2" style="vertical-align: middle">{"cidade": "18900"}</td>
+                                                    <td rowspan="2" style="vertical-align: middle">"cidade": {"description": "Código da cidade, obtido da tabela corporativa.", "type": "integer"}</td>
+                                                    <td >Homologação: https://svchomolog.intra.goias.gov.br/scorp-api/ui/</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Produção:https://servicos.goias.gov.br/scorp-api</td>
+                                                </tr>
+                                                <tr>
+                                                    <td rowspan="2" style="vertical-align: middle">Sexo</td>
+                                                    <td rowspan="2" style="vertical-align: middle">{"sexo": "1"}</td>
+                                                    <td rowspan="2" style="vertical-align: middle">"sexo": {"description": "Código do sexo", "type": "integer", "minimum": "1", "maximum": "2" }</td>
+                                                    <td >Masculino=1</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Feminino=2</td>
+                                                </tr>
+                                                <tr>
+                                                    <td rowspan="7" style="vertical-align: middle">Etnia</td>
+                                                    <td rowspan="7" style="vertical-align: middle">{"etnia": "4"}</td>
+                                                    <td rowspan="7" style="vertical-align: middle">"etnia": {"description": "Código da etnia", "type": "integer", "minimum": "1", "maximum": "7"}</td>
+                                                    <td >Branca=1</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Negra=2</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Indígena=3</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Parda=4</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Mulata=5</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Cabocla=6</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Cafuza=7</td>
+                                                </tr>
+                                                <tr>
+                                                    <td rowspan="2" style="vertical-align: middle">Cargo</td>
+                                                    <td rowspan="2" style="vertical-align: middle">{“cargo”: “800”}</td>
+                                                    <td rowspan="2" style="vertical-align: middle">"cargo": {"description": "Código do cargo, obtido da tabela corporativa.", "type": "integer"}</td>
+                                                    <td>Homologação: https://svchomolog.intra.goias.gov.br/scorp-api/ui/</td>
+                                                </tr>    
+                                                <tr>
+                                                    <td>Produção: https://servicos.goias.gov.br/scorp-api</td>
+                                                </tr>
+                                            </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="retorno" class="section">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12 wow fadeInLeft" data-wow-duration="1000ms" data-wow-delay="300ms">
+                            <div class="feature-item">
+                                <h3 class="title-small">Códigos de Retorno de Chamada (HTTP)</h3>
+                                <p>Definir os principais códigos de resposta HTTP (<a href="https://tools.ietf.org/html/rfc7231#section-6" target="blank">https://tools.ietf.org/html/rfc7231#section-6</a></p>
+                                <ul>
+                                    <li>1xx (Informacional): A requisição foi recebida, continuando o processo</li>
+                                    <li>2xx (Sucesso): A requisição foi recebida com sucesso, entendida e aceita</li>
+                                    <li>3xx (Redirecionamento): É necessário alguma ação adicional para que a ação seja concluída</li>
+                                    <li>4xx (Erro Cliente): A requisição contém sintaxe inválida ou não pode ser realizada</li>
+                                    <li>5xx (Erro Servidor): O servidor falhou ao tratar uma requisição aparentemente válida</li>
+                                </ul>
+                                <P>Códigos de resposta HTTP esperados/retornados:</P>
+                                <div class="table-responsive">
+                                    <table class="table table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th>Código</th>
+                                                <th>Descrição</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>HTTP 200</td>
+                                                <td>Requisição Completa</td>
+                                            </tr>
+                                            <tr>
+                                                <td>HTTP 204</td>
+                                                <td>Sem retorno de dados</td>
+                                            </tr>
+                                            <tr>
+                                                <td>HTTP 206</td>
+                                                <td>Existem mais dados a serem retornados</td>
+                                            </tr>
+                                            <tr>
+                                                <td>HTTP 400</td>
+                                                <td>Requisição inválida</td>
+                                            </tr>
+                                            <tr>
+                                                <td>HTTP 401</td>
+                                                <td>Não autorizado</td>
+                                            </tr>
+                                            <tr>
+                                                <td>HTTP 403</td>
+                                                <td>Sem permissão</td>
+                                            </tr>
+                                            <tr>
+                                                <td>HTTP 408</td>
+                                                <td>Timeout da requisição</td>
+                                            </tr>
+                                            <tr>
+                                                <td>HTTP 416</td>
+                                                <td>Intervalo solicitado inválido</td>
+                                            </tr>
+                                            <tr>
+                                                <td>HTTP 422</td>
+                                                <td>Não foi possível processar o conteúdo da mensagem</td>
+                                            </tr>
+                                            <tr>
+                                                <td>HTTP 500</td>
+                                                <td>Erro interno no servidor</td>
+                                            </tr>
+                                            <tr>
+                                                <td>HTTP 503</td>
+                                                <td>Serviço indisponível</td>
+                                            </tr>
+                                            <tr>
+                                                <td>HTTP 504</td>
+                                                <td>Timeout do Gateway</td>
+                                            </tr>
+                                            <tr>
+                                                <td>HTTP 522</td>
+                                                <td>Timeout do Servidor</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section> 
+            <section id="infraestrutura" class="section main-feature-gray">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12 wow fadeInLeft" data-wow-duration="1000ms" data-wow-delay="300ms">
+                            <div class="feature-item">
+                                <h3 class="title-small">Infraestrutura e Segurança</h3>
+                                <p>É necessário que os serviços estejam disponíveis, no mínimo, nos seguintes ambientes:</p>
+                                <ul>
+                                    <li>Homologação</li>
+                                    <li>Produção</li>
+                                </ul>
+                                <p>Definição dos requisitos de segurança que o serviço deve atender para que seja utilizado:</p>
+                                <ul>
+                                    <li>A rede deve estar integrada a rede corporativa do Estado de Goiás.</li>
+                                    <li>As portas 80 (HTTP) e 443 (HTTPS) devem estar liberadas para comunicação nos servidores supracitados.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="authenticacao" class="section">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12 wow fadeInLeft" data-wow-duration="1000ms" data-wow-delay="300ms">
+                            <div class="feature-item">
+                                <h3 class="title-small">Autenticação</h3>
+                                <p>A autenticação para a utilização dos serviços deve seguir a especificação OAUTH 2 (http://oauth.net/2/), utilizando o grant_type=client_credentials, para permitir o acesso ao token de autenticação.</p>
+                                <p>Exemplo:</p>
+                                <p>POST https://api.oauth2server.com/token?grant_type=client_credentials&client_id=CLIENT_ID&client_secret=CLIENT_SECRET</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="serviconew" class="section main-feature-gray">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12 wow fadeInLeft" data-wow-duration="1000ms" data-wow-delay="300ms">
+                            <div class="feature-item">
+                                <h3 class="title-small">Disponibilização do Serviço</h3>
+                                <p>Para a disponibilização de novos serviços, devem ser informadas as seguintes informações:</p>
+                                <ul>
+                                    <li><b>Nome:</b> Identificador do serviço;</li>
+                                    <li><b>Descrição:</b> Descrição e características do serviço;</li>
+                                    <li><b>Versão:</b> Versão atual do serviço;</li>
+                                    <li><b>Data para disponibilização do serviço:</b> Data prevista para a disponibilização do serviço;</li>
+
+                                    <li><b>Responsável: </b> Informações do responsável pelo serviço no fornecedor;
+                                        <ol>
+                                            <li><b>Órgão: </b> Órgão responsável pelo serviço;</li>
+                                            <li><b>Setor/Área:</b> Área responsável pela manutenção do serviço;</li> 
+                                            <li><b>Nome:</b> Nome do responsável pelo serviço (pessoa ou área);</li>
+                                            <li><b>Função:</b> Função do responsável pelo serviço;</li>
+                                            <li><b>Email:</b> Email de contato do responsável pelo serviço;</li>
+                                            <li><b>Telefone:</b> Telefone de contato do responsável pelo serviço (informar todos os disponíveis).</li>
+                                        </ol>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-12 col-sm-12 wow fadeInLeft" data-wow-duration="1000ms" data-wow-delay="300ms">
+                            <a class="example-image-link fancybox-thumbs" data-fancybox-group="thumb" href="img/pin/figura1.png" data-lightbox="example-set" data-title="teste">
+                                <img src="img/pin/figura1.png" class="img-responsive" alt="">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="servicooff" class="section">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12 wow fadeInLeft" data-wow-duration="1000ms" data-wow-delay="300ms">
+                            <div class="feature-item">
+                                <h3 class="title-small">Desativação de Serviço</h3>
+                                <p>Para a desativação de serviços, devem ser informadas as seguintes informações:</p>
+                                <ul>
+                                    <li><b>Nome:</b> Identificador do serviço;</li>
+                                    <li><b>Versão:</b> Versão atual do serviço;</li>
+                                    <li><b>Data Prevista para Desativação do Serviço:</b> Data prevista para que o serviço será desativado;</li>
+                                    <li><b>Responsável: </b> Informações do responsável pelo serviço no fornecedor;
+                                        <ol>
+                                            <li><b>Órgão: </b> Órgão responsável pelo serviço;</li>
+                                            <li><b>Setor/Área:</b> Área responsável pela manutenção do serviço;</li> 
+                                            <li><b>Nome:</b> Nome do responsável pelo serviço (pessoa ou área);</li>
+                                            <li><b>Função:</b> Função do responsável pelo serviço;</li>
+                                            <li><b>Email:</b> Email de contato do responsável pelo serviço;</li>
+                                            <li><b>Telefone:</b> Telefone de contato do responsável pelo serviço (informar todos os disponíveis).</li>
+                                        </ol>
+                                    </li>
+                                </ul>
+                                <p><b>*</b><i><i>As informações do responsável são opcionais e devem ser informadas quando houver alguma atualização da informação.</i></p>
+                            </div>
+                            <div class="col-md-12 col-sm-12 wow fadeInLeft" data-wow-duration="1000ms" data-wow-delay="300ms">
+                                <a class="example-image-link fancybox-thumbs" data-fancybox-group="thumb" href="img/pin/figura2.png" data-lightbox="example-set" data-title="teste">
+                                    <img src="img/pin/figura2.png" class="img-responsive" alt="">
+                                </a>
+                            </div>                            
+                        </div>
+                    </div>
+                </div>
+            </section> 
+            <section id="servicoupdate" class="section main-feature-gray">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12 wow fadeInLeft" data-wow-duration="1000ms" data-wow-delay="300ms">
+                            <div class="feature-item">
+                                <h3 class="title-small">Atualização de Serviço</h3>
+                                <p>Para a disponibilização de novas versões de serviços, devem ser informadas as seguintes informações:</p>
+                                <ul>
+                                    <li><b>Nome:</b> Identificador do serviço;</li>
+                                    <li><b>Versão:</b> Versão atual do serviço;</li>
+                                    <li><b>Nova Versão:</b> Nova versão a ser disponibilizada;</li>
+                                    <li><b>Data de Disponibilização da Versão: </b> Data em que o novo serviço será implantado;</li>
+                                    <li><b>Data Prevista para Desativação da Versão Atual: </b> Data em que a versão atual será desativada;</li>
+                                    <li><b>Notas da Versão </b> Descrição resumida das alterações da nova versão.</li>
+                                    <li><b>Responsável: </b> Informações do responsável pelo serviço no fornecedor;
+                                        <ol>
+                                            <li><b>Órgão: </b> Órgão responsável pelo serviço;</li>
+                                            <li><b>Setor/Área:</b> Área responsável pela manutenção do serviço;</li> 
+                                            <li><b>Nome:</b> Nome do responsável pelo serviço (pessoa ou área);</li>
+                                            <li><b>Função:</b> Função do responsável pelo serviço;</li>
+                                            <li><b>Email:</b> Email de contato do responsável pelo serviço;</li>
+                                            <li><b>Telefone:</b> Telefone de contato do responsável pelo serviço (informar todos os disponíveis).</li>
+                                        </ol>
+                                    </li>
+                                </ul>
+                                <p><b>*</b><i><i>As informações do responsável são opcionais e devem ser informadas quando houver alguma atualização da informação.</i></p>
+                            </div>
+                            <div class="col-md-12 col-sm-12 wow fadeInLeft" data-wow-duration="1000ms" data-wow-delay="300ms">
+                                <a class="example-image-link fancybox-thumbs" data-fancybox-group="thumb" href="img/pin/figura3.png" data-lightbox="example-set" data-title="teste">
+                                    <img src="img/pin/figura3.png" class="img-responsive" alt="">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section> 
+            <section id="apiswagger" class="section">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12 col-sm-12 wow fadeInLeft" data-wow-duration="1000ms" data-wow-delay="300ms">
+                                <div class="feature-item">
+                                    <h3 class="title-small">Ferramentas e APIs fornecidas pelo framework Swagger</h3>
+                                    <p>Existem várias ferramentas disponíveis para a manipulação das informações de serviços, como APIs para a geração da documentação OpenAPI (Swagger), geração de código a partir da documentação, ferramentas que auxiliam na edição da documentação e ferramentas para a visualização e invocação de serviços. Além das ferramentas fornecidas pelo Framework Swagger, são disponibilizadas pela comunidade, ferramentas que podem ser utilizadas livremente pelos desenvolvedores.</p>
+                                    <p>Seguem abaixo, algumas das ferramentas disponíveis no endereço <a href="http://swagger.io/tools" target="blank">http://swagger.io/tools</a></p>
+                                    <p><b>Swagger UI </b>(<a href="http://swagger.io/swagger-ui" target="blank">http://swagger.io/swagger-ui</a></p>
+                                    <p>Consiste em um conjunto de ativos HTML, Javascript e CSS que geram a documentação e um sandbox para a execução do serviço dinamicamente a partir de uma API compatível com o Swagger API (OpenAPI).</p>
+                                    <p>Exemplo: <a href="http://petstore.swagger.io" target="blank">http://petstore.swagger.io</a></p>
+                                </div>
+                            </div>
+                            <div class="col-md-12 col-sm-12 wow fadeInLeft" data-wow-duration="1000ms" data-wow-delay="300ms">
+                            <a class="example-image-link fancybox-thumbs" data-fancybox-group="thumb" href="img/pin/swagger1.png" data-lightbox="example-set" data-title="teste">
+                                <img src="img/pin/swagger1.png" class="img-responsive" alt="">
+                            </a>
+                        </div>                            
+                    </div>
+                </div>
+            </section> 
+            <section id="exemploswagger" class="section main-feature-gray">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12 wow fadeInLeft" data-wow-duration="1000ms" data-wow-delay="300ms">
+                            <div class="feature-item">
+                                <h3 class="title-small">Exemplo de serviço utilizando o framework Swagger</h3>
+                                <p><b>Documentação OpenAPI no formato JSON</b></p>
+                                <p>swagger.json</p>
+                                <pre>
+                                        {
+                                            "swagger": "2.0",
+                                            "info": {
+                                              "description": "Padrão de interoperabilidade para os serviços disponibilizados.",
+                                              "version": "1.0.0",
+                                              "title": "",
+                                              "termsOfService": "",
+                                              "contact": {
+                                                "email": "projetos.scti@segplan.go.gov.br"
+                                              }
+                                            },
+                                            "host": "localhost:8080",
+                                            "basePath": "/pin-api/api",
+                                            "tags": [
+                                              {
+                                                "name": "Query em Aluno"
+                                              }
+                                            ],
+                                            "schemes": [
+                                              "http"
+                                            ],
+                                            "paths": {
+                                              "/aluno/{id}": {
+                                                "put": {
+                                                  "summary": "Atualiza o registro do aluno.",
+                                                  "description": "Atualiza o registro do aluno a partir do ID.",
+                                                  "operationId": "alterar",
+                                                  "consumes": [
+                                                    "application/json"
+                                                  ],
+                                                  "parameters": [
+                                                    {
+                                                      "in": "body",
+                                                      "name": "body",
+                                                      "required": false,
+                                                      "schema": {
+                                                        "$ref": "#/definitions/Aluno"
+                                                      }
+                                                    },
+                                                    {
+                                                      "name": "id",
+                                                      "in": "path",
+                                                      "required": true,
+                                                      "type": "integer",
+                                                      "format": "int32"
+                                                    }
+                                                  ],
+                                                  "responses": {
+                                                    "200": {
+                                                      "description": "OK."
+                                                    },
+                                                    "500": {
+                                                      "description": "Erro interno."
+                                                    }
+                                                  }
+                                                }
+                                              },
+                                              "/aluno/{id}": {
+                                                "delete": {
+                                                  "summary": "Exclui o aluno.",
+                                                  "description": "Exclui o aluno a partir do ID.",
+                                                  "operationId": "excluir",
+                                                  "produces": [
+                                                    "application/json"
+                                                  ],
+                                                  "parameters": [
+                                                    {
+                                                      "name": "id",
+                                                      "in": "path",
+                                                      "required": true,
+                                                      "type": "integer",
+                                                      "format": "int32"
+                                                    }
+                                                  ],
+                                                  "responses": {
+                                                    "200": {
+                                                      "description": "OK."
+                                                    },
+                                                    "500": {
+                                                      "description": "Erro interno."
+                                                    }
+                                                  }
+                                                }
+                                              },
+                                              "/aluno": {
+                                                "get": {
+                                                  "tags": [
+                                                    "Query em Aluno"
+                                                  ],
+                                                  "summary": "Obtem uma lista de alunos.",
+                                                  "description": "ObtÃ©m uma lista de alunos paginada.",
+                                                  "operationId": "list",
+                                                  "produces": [
+                                                    "application/json"
+                                                  ],
+                                                  "parameters": [
+                                                    {
+                                                      "name": "filtroPesquisaNome",
+                                                      "in": "query",
+                                                      "required": false,
+                                                      "type": "string"
+                                                    },
+                                                    {
+                                                      "name": "offset",
+                                                      "in": "query",
+                                                      "required": false,
+                                                      "type": "integer",
+                                                      "format": "int32"
+                                                    },
+                                                    {
+                                                      "name": "limit",
+                                                      "in": "query",
+                                                      "required": false,
+                                                      "type": "integer",
+                                                      "format": "int32"
+                                                    }
+                                                  ],
+                                                  "responses": {
+                                                    "200": {
+                                                      "description": "Sem paginação (todos os dados foram retornados)."
+                                                    },
+                                                    "204": {
+                                                      "description": "Sem retorno de dados."
+                                                    },
+                                                    "206": {
+                                                      "description": "Existe paginação (a quantidade total é maior que o limit informado)."
+                                                    },
+                                                    "406": {
+                                                      "description": "Intervalo solicitado inválido."
+                                                    },
+                                                    "500": {
+                                                      "description": "Erro interno."
+                                                    }
+                                                  },
+                                                  "x-mask": {
+                                                    "nascimento": "dd/MM/yyyy",
+                                                    "id": "00000000"
+                                                  }
+                                                }
+                                              },
+                                              "/aluno/noaccess": {
+                                                "delete": {
+                                                  "summary": "Apresenta um erro de permissão ao requisitante.",
+                                                  "description": "Apresenta um erro de permissão.",
+                                                  "operationId": "semPermissao",
+                                                  "produces": [
+                                                    "application/json"
+                                                  ],
+                                                  "parameters": [],
+                                                  "responses": {
+                                                    "403": {
+                                                      "description": "NÃ£o autorizado."
+                                                    },
+                                                    "500": {
+                                                      "description": "Erro interno."
+                                                    }
+                                                  }
+                                                }
+                                              },
+                                              "/aluno ": {
+                                                "put": {
+                                                  "summary": "Armazena o registro do aluno.",
+                                                  "description": "Armazena o registro do aluno na base de dados.",
+                                                  "operationId": "salvar",
+                                                  "consumes": [
+                                                    "application/json"
+                                                  ],
+                                                  "parameters": [
+                                                    {
+                                                      "in": "body",
+                                                      "name": "body",
+                                                      "required": false,
+                                                      "schema": {
+                                                        "$ref": "#/definitions/Aluno"
+                                                      }
+                                                    }
+                                                  ],
+                                                  "responses": {
+                                                    "200": {
+                                                      "description": "OK."
+                                                    },
+                                                    "500": {
+                                                      "description": "Erro interno."
+                                                    }
+                                                  }
+                                                }
+                                              },
+                                              "/aluno/{id}": {
+                                                "get": {
+                                                  "tags": [
+                                                    "Query em Aluno"
+                                                  ],
+                                                  "summary": "Obtem o aluno.",
+                                                  "description": "Obtem o aluno a partir do ID.",
+                                                  "operationId": "consultar",
+                                                  "produces": [
+                                                    "application/json"
+                                                  ],
+                                                  "parameters": [
+                                                    {
+                                                      "name": "id",
+                                                      "in": "path",
+                                                      "required": true,
+                                                      "type": "integer",
+                                                      "format": "int32"
+                                                    }
+                                                  ],
+                                                  "responses": {
+                                                    "200": {
+                                                      "description": "OK.",
+                                                      "schema": {
+                                                        "$ref": "#/definitions/Aluno"
+                                                      }
+                                                    },
+                                                    "404": {
+                                                      "description": "Aluno não encontrado."
+                                                    },
+                                                    "500": {
+                                                      "description": "Erro interno."
+                                                    }
+                                                  },
+                                                  "x-mask": {
+                                                    "nascimento": "dd/MM/yyyy"
+                                                  }
+                                                }
+                                              }
+                                            },
+                                            "definitions": {
+                                              "Aluno": {
+                                                "type": "object",
+                                                "properties": {
+                                                  "id": {
+                                                    "type": "integer",
+                                                    "format": "int32",
+                                                    "description": "Identificador do aluno"
+                                                  },
+                                                  "nome": {
+                                                    "type": "string",
+                                                    "description": "Nome do aluno"
+                                                  },
+                                                  "nascimento": {
+                                                    "type": "string",
+                                                    "format": "date",
+                                                    "description": "Data de nascimento do aluno"
+                                                  },
+                                                  "sexo": {
+                                                    "type": "integer",
+                                                    "format": "int32",
+                                                    "description": "Sexo do aluno (1 - Masculino, 2 - Feminino)",
+                                                    "enum": [
+                                                      1,
+                                                      2
+                                                    ]
+                                                  },
+                                                  "ativo": {
+                                                    "type": "boolean",
+                                                    "description": "Indica se o registro do aluno está ativo",
+                                                    "default": false
+                                                  }
+                                                },
+                                                "description": "Informações de aluno"
+                                              }
+                                            }
+                                          }
+                                </pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>             
+            <section id="exemplocodigo" class="section">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12 wow fadeInLeft" data-wow-duration="1000ms" data-wow-delay="300ms">
+                            <div class="feature-item">
+                                <h3 class="title-small">Exemplos de Código</h3>
+                                <p><a href="https://github.com/goias/pin-goias" target="blank">Java</a></p>
+                                <p>.Net C#</p>
+                                <p>PHP</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <script src="js/jquery-2.1.4.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/ripples.min.js"></script>
+        <script src="js/material.min.js"></script>
+        <script src="js/wow.js"></script>
+        <script src="js/jquery.mmenu.min.all.js"></script>
+        <script src="js/count-to.js"></script>
+        <script src="js/jquery.inview.min.js"></script>
+        <script src="js/classie.js"></script>
+        <script src="js/jquery.nav.js"></script>
+
+        <script src="js/smooth-scroll.js"></script>
+        <script src="js/main.js"></script>
+
+        <script type="text/javascript" src="js/fancyapps-fancyBox-18d1712/source/jquery.fancybox.js?v=2.1.5"></script>
+        <link rel="stylesheet" type="text/css" href="js/fancyapps-fancyBox-18d1712/source/jquery.fancybox.css?v=2.1.5" media="screen" />
+
+        <link rel="stylesheet" type="text/css" href="js/fancyapps-fancyBox-18d1712/source/helpers/jquery.fancybox-thumbs.css?v=1.0.7" />
+        <script type="text/javascript" src="js/fancyapps-fancyBox-18d1712/source/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+
+        <script>
+            $(document).ready(function () {
+                // This command is used to initialize some elements and make them work properly
+                $.material.init();
+                $('.fancybox-thumbs').fancybox({
+                    prevEffect : 'none',
+                    nextEffect : 'none',
+
+                    closeBtn  : false,
+                    arrows    : false,
+                    nextClick : true,
+
+                    helpers : {
+                        thumbs : {
+                            width  : 50,
+                            height : 50
+                        }
+                    }
+                });
+
+            });
+        </script>
+    </body>
+</html>
